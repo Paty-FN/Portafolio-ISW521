@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Control Center</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" aria-label="Menú principal">
+
+        <div class="logo">
+            🚀 Galaxy Control Center
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Planetas</a></li>
+            <li><a href="#">Misiones</a></li>
+            <li><a href="#">Reportes</a></li>
+        </ul>
+
+        <div class="nav-actions">
+
+            <button class="btn-accessibility"
+                    aria-label="Modo accesible">
+                ♿ Modo Accesible
+            </button>
+
+            <button class="logout-btn"
+                    aria-label="Cerrar sesión">
+                Cerrar Sesión
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- LAYOUT PRINCIPAL -->
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h4>GALAXY MENU</h4>
+
+            <ul>
+                <li class="active">🌎 Planetas</li>
+                <li>🛰️ Satélites</li>
+                <li>⭐ Estrellas</li>
+                <li>☄️ Asteroides</li>
+                <li>🛸 Misiones</li>
+                <li>⚙️ Configuración</li>
+            </ul>
+
+            <div class="version">
+                Galaxy OS v2.4.1
+            </div>
+
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+
+            <div class="header-main">
+                <h2>🌌 Monitoreo Galáctico en Tiempo Real</h2>
+                <span class="live">● En línea</span>
+            </div>
+
+            <!-- TARJETAS -->
+            <section class="sensor-grid">
+
+                <div class="sensor-card green">
+                    <h3>OXÍGENO ESTACIÓN ESPACIAL</h3>
+                    <div class="value">73%</div>
+                    <p>Actualizado hace 2 min</p>
+                </div>
+
+                <div class="sensor-card yellow">
+                    <h3>COMBUSTIBLE PRINCIPAL</h3>
+                    <div class="value">85%</div>
+                    <p>Nivel operativo</p>
+                </div>
+
+                <div class="sensor-card green">
+                    <h3>RADIACIÓN CÓSMICA</h3>
+                    <div class="value">0.4 mSv</div>
+                    <p>Dentro del rango seguro</p>
+                </div>
+
+                <div class="sensor-card cyan">
+                    <h3>SEÑALES RECIBIDAS</h3>
+                    <div class="value">142/min</div>
+                    <p>Comunicación estable</p>
+                </div>
+
+                <div class="sensor-card purple">
+                    <h3>TEMPERATURA EXTERIOR</h3>
+                    <div class="value">-120°C</div>
+                    <p>Espacio profundo</p>
+                </div>
+
+                <div class="sensor-card green">
+                    <h3>ESCUDOS DEFENSIVOS</h3>
+                    <div class="value">ACTIVOS</div>
+                    <p>Protección habilitada</p>
+                </div>
+
+                <!-- TARJETA DE INCLUSIÓN -->
+                <div class="sensor-card accessibility-card">
+                    <h3>♿ ACCESIBILIDAD</h3>
+                    <div class="value">ACTIVA</div>
+                    <p>Alto contraste habilitado</p>
+                    <p>Compatible con lectores de pantalla</p>
+                </div>
+
+            </section>
+
+            <!-- ÁREA DE GRÁFICO -->
+            <div class="chart">
+                <h4>📡 Actividad Espacial — Últimas 6 horas</h4>
+                <br>
+                <p>
+                    Área reservada para gráfico de monitoreo.
+                </p>
+            </div>
+
+        </main>
+
+        <!-- ALERTAS -->
+        <aside class="alert-panel">
+
+            <h3>🚨 ALERTAS ACTIVAS</h3>
+
+            <div class="alert red">
+                ☄️ Asteroide detectado en trayectoria cercana
+            </div>
+
+            <div class="alert orange">
+                ⚠️ Incremento de radiación solar
+            </div>
+
+            <div class="alert green">
+                ✅ Comunicaciones funcionando correctamente
+            </div>
+
+            <div class="alert green">
+                ✅ Escudos operativos
+            </div>
+
+            <div class="update">
+                Próxima actualización<br><br>
+                <strong>00:47</strong>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        🚀 Galaxy Control Center - Proyecto Flexbox ISW521
+    </footer>
+
+</body>
+</html>
