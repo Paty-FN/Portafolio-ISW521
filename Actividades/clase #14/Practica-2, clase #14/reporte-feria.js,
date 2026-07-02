@@ -1,0 +1,284 @@
+// =========================
+// Conjunto de datos
+// =========================
+
+const ventasFeria = [
+{
+stand: "Stand 3",
+producto: "Empanadas",
+categoria: "comida",
+monto: 15000,
+etiquetas: ["salado", "artesanal"]
+},
+{
+stand: "Stand 3",
+producto: "Refresco natural",
+categoria: "bebida",
+monto: 6000,
+etiquetas: ["natural"]
+},
+{
+stand: "Stand 7",
+producto: "Llavero tallado",
+categoria: "artesania",
+monto: 3500,
+etiquetas: ["madera", "artesanal"]
+},
+{
+stand: "Stand 7",
+producto: "Pulsera tejida",
+categoria: "artesania",
+monto: 2500,
+etiquetas: ["tejido"]
+},
+{
+stand: "Stand 12",
+producto: "Jabon artesanal",
+categoria: "cuidado",
+monto: 4000,
+etiquetas: ["natural", "artesanal"]
+},
+{
+stand: "Stand 5",
+producto: "Cafe de altura",
+categoria: "bebida",
+monto: 8000,
+etiquetas: ["organico"]
+},
+{
+stand: "Stand 5",
+producto: "Postre de cafe",
+categoria: "comida",
+monto: 3000,
+etiquetas: ["dulce"]
+}
+];
+
+//=====================================================
+// Parte A
+//=====================================================
+
+console.log("PARTE A");
+
+console.log(typeof ventasFeria);
+
+// Explicación:
+// typeof devuelve "object" porque los arreglos son un tipo especial de objeto.
+
+console.log("Predicción del length: 16");
+
+ventasFeria[15] = {
+stand: "Stand 20",
+producto: "Sorpresa"
+};
+
+console.log("Length real:", ventasFeria.length);
+
+// Entre los índices 7 y 14 un for imprimiría undefined,
+// porque esas posiciones están vacías.
+
+for(let i=7;i<=14;i++){
+console.log(i, ventasFeria[i]);
+}
+
+// Restaurar arreglo
+ventasFeria.length = 7;
+
+
+//=====================================================
+// Parte B
+//=====================================================
+
+console.log("PARTE B");
+
+// Primer bucle:
+// Selecciona un subconjunto.
+
+// Segundo bucle:
+// Transforma cada elemento.
+
+const ventasAltas = ventasFeria.filter(v=>v.monto>5000);
+
+const nombresProductos = ventasFeria.map(v=>v.producto.toUpperCase());
+
+console.log(ventasAltas);
+
+console.log(nombresProductos);
+
+
+//=====================================================
+// Parte C
+//=====================================================
+
+console.log("PARTE C");
+
+function ordenarPorMontoMutando(lista){
+
+lista.sort((a,b)=>b.monto-a.monto);
+
+return lista;
+
+}
+
+const ordenadas = ordenarPorMontoMutando([...ventasFeria]);
+
+console.log(ordenadas);
+
+console.log("Original");
+
+console.log(ventasFeria);
+
+// Nueva función sin mutar
+
+function ordenarPorMonto(lista){
+
+return [...lista].sort((a,b)=>b.monto-a.monto);
+
+}
+
+const copiaOrdenada = ordenarPorMonto(ventasFeria);
+
+console.log(copiaOrdenada);
+
+console.log("Original sigue igual");
+
+console.log(ventasFeria);
+
+
+//=====================================================
+// Parte D
+//=====================================================
+
+console.log("PARTE D");
+
+const reporte = ventasFeria.map(v=>
+`${v.producto.toUpperCase()} (${v.stand}) — ${v.monto} colones`
+);
+
+console.log(reporte);
+
+console.log("Length reporte:",reporte.length);
+
+console.log("Length ventas:",ventasFeria.length);
+
+
+//=====================================================
+// Parte E
+//=====================================================
+
+console.log("PARTE E");
+
+const artesania = ventasFeria.filter(v=>v.categoria==="artesania");
+
+console.log(artesania);
+
+console.log("Cantidad:",artesania.length);
+
+console.log("Productos:");
+
+artesania.forEach(v=>console.log(v.producto));
+
+const nombresArtesania = ventasFeria
+.filter(v=>v.categoria==="artesania")
+.map(v=>v.producto);
+
+console.log(nombresArtesania);
+
+
+//=====================================================
+// Parte F
+//=====================================================
+
+console.log("PARTE F");
+
+const primeraVenta = ventasFeria.find(v=>v.monto>7000);
+
+console.log(primeraVenta);
+
+const posicion = ventasFeria.findIndex(v=>v.monto>7000);
+
+console.log(posicion);
+
+// Explicación:
+// find() es mejor porque devuelve directamente el primer elemento encontrado,
+// sin recorrer todo el arreglo como filter().
+
+
+//=====================================================
+// Parte G
+//=====================================================
+
+console.log("PARTE G");
+
+const totalCategoria = ventasFeria.reduce((acc,v)=>{
+
+acc[v.categoria]=(acc[v.categoria]||0)+v.monto;
+
+return acc;
+
+},{});
+
+console.log(totalCategoria);
+
+const totalGeneral = ventasFeria.reduce((acc,v)=>acc+v.monto,0);
+
+console.log(totalGeneral);
+
+// Explicación:
+// El primer reduce inicia con {} porque construye un objeto.
+// El segundo inicia con 0 porque acumula un número.
+
+
+//=====================================================
+// Parte H
+//=====================================================
+
+console.log("PARTE H");
+
+const montos = ventasFeria.map(v=>v.monto);
+
+console.log("Predicción:");
+console.log("sort() ordena como texto.");
+
+console.log(montos.sort());
+
+console.log("15000 queda antes de 2500 porque compara cadenas.");
+
+const ordenMayorMenor = [...ventasFeria].sort((a,b)=>b.monto-a.monto);
+
+console.log(ordenMayorMenor);
+
+
+//=====================================================
+// Parte I
+//=====================================================
+
+console.log("PARTE I");
+
+const etiquetas = ventasFeria.flatMap(v=>v.etiquetas);
+
+console.log(etiquetas);
+
+const etiquetasUnicas = [...new Set(etiquetas)];
+
+console.log(etiquetasUnicas);
+
+console.log("Cantidad:",etiquetasUnicas.length);
+
+// Explicación:
+// map() devolvería un arreglo de arreglos.
+// flatMap() devuelve un único arreglo plano.
+
+
+//=====================================================
+// Reto opcional
+//=====================================================
+
+console.log("RETO");
+
+const miniReporte = ventasFeria
+.filter(v=>v.categoria==="artesania")
+.map(v=>`${v.producto} — ${v.monto} colones`)
+.sort();
+
+console.log(miniReporte);
