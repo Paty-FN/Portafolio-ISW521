@@ -1,0 +1,17 @@
+Actividades
+Actividad 1
+Tres líneas y sin falta una la aplicación tira un fallo 
+
+
+Actividad 2
+Se necesita solo una 
+
+Actividad 3
+debería solo un nodo y si toco los 500 significa que no esta funcionando el DOM
+
+Actividad 4
+Al ser alta rotación de personal Angular seria bueno para evitar cambios a nivel arquitectónico.
+Angular a largo plazo es bien recomendado debido al TypeScript obligatorio
+
+Actividad 5
+Enrutador, manejo de estado global, Pasarelas de pago e Interfaz
